@@ -16,6 +16,8 @@ int main(int argc, char* argv[])
     var(CORE::str::to_lower_case("Hello, World!"));
 
     show_sizeof(test);
+    show_sizeof(test);
+    show_sizeof(test);
     show_sizeof_many(test, 100);
 
     int num = 123456789;
