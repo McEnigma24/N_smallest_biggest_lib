@@ -91,23 +91,23 @@ namespace N_smallest_or_biggest_values
     class N_biggest_values
     {
         entry_t<value_t, obj_t> tab[tab_size];
-        int index_of_biggest_value = -1;
+        int index_of_smallest_value = -1;
 
     private:
         void puch_back(const value_t& value, obj_t* obj)
         {
-            index_of_biggest_value++;
+            index_of_smallest_value++;
 
-            tab[index_of_biggest_value].value = value;
-            tab[index_of_biggest_value].obj_ptr = obj;
+            tab[index_of_smallest_value].value = value;
+            tab[index_of_smallest_value].obj_ptr = obj;
         }
 
         void insert(const int index, const value_t& value, obj_t* obj)
         {
-            if (index_of_biggest_value != (tab_size - 1)) { index_of_biggest_value++; }
+            if (index_of_smallest_value != (tab_size - 1)) { index_of_smallest_value++; }
 
             // moving obj to make space //
-            for (int i = index_of_biggest_value; i >= (index + 1); i--)
+            for (int i = index_of_smallest_value; i >= (index + 1); i--)
             {
                 tab[i] = tab[i - 1];
             }
@@ -120,21 +120,20 @@ namespace N_smallest_or_biggest_values
         void push(const value_t& value, const obj_t* obj)
         {
             // first obj //
-            if (index_of_biggest_value == -1)
+            if (index_of_smallest_value == -1)
             {
                 puch_back(value, (obj_t*)obj);
                 return;
             }
 
             // pierwsza wartość jest najmniejsza
-            const value_t smallest_value =
-                tab[0].value; // optymalizacja żeby wyszukiwać binarnie, bo jak będę wkładał we właściwe miejsca to będzie posortowane
-            const value_t biggest_value = tab[index_of_biggest_value].value;
+            const value_t smallest_value = tab[index_of_smallest_value].value;
+            const value_t biggest_value = tab[0].value;
 
             // jak jest większa od aktualnie największej to dajemy ją na koniec i nic nie przenosimy
-            if (biggest_value < value)
+            if (smallest_value < value)
             {
-                if (index_of_biggest_value == (tab_size - 1))
+                if (index_of_smallest_value == (tab_size - 1))
                 {
                     // wszystkie pozycje są już zajęte i można odrzucać
                     return;
@@ -157,7 +156,7 @@ namespace N_smallest_or_biggest_values
 
         entry_t<value_t, obj_t>* get_data(int& size)
         {
-            size = index_of_biggest_value + 1;
+            size = index_of_smallest_value + 1;
             return tab;
         }
     };

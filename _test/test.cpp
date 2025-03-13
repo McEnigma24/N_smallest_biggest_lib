@@ -37,20 +37,23 @@ TEST(SampleTest, smallest_3)
 
     EXPECT_EQ(size, 3);
 
-    EXPECT_EQ(tab[base_0(1)].value, 1);
-    EXPECT_EQ(tab[base_0(1)].obj_ptr->a, 1);
-    EXPECT_EQ(tab[base_0(1)].obj_ptr->b, 1);
-    EXPECT_EQ(tab[base_0(1)].obj_ptr->c, 1);
+    value = 1;
+    EXPECT_EQ(tab[base_0(1)].value, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->c, value);
 
-    EXPECT_EQ(tab[base_0(2)].value, 2);
-    EXPECT_EQ(tab[base_0(2)].obj_ptr->a, 2);
-    EXPECT_EQ(tab[base_0(2)].obj_ptr->b, 2);
-    EXPECT_EQ(tab[base_0(2)].obj_ptr->c, 2);
+    value = 2;
+    EXPECT_EQ(tab[base_0(2)].value, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->c, value);
 
-    EXPECT_EQ(tab[base_0(3)].value, 3);
-    EXPECT_EQ(tab[base_0(3)].obj_ptr->a, 3);
-    EXPECT_EQ(tab[base_0(3)].obj_ptr->b, 3);
-    EXPECT_EQ(tab[base_0(3)].obj_ptr->c, 3);
+    value = 3;
+    EXPECT_EQ(tab[base_0(3)].value, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->c, value);
 }
 
 TEST(SampleTest, smallest_5)
@@ -78,30 +81,135 @@ TEST(SampleTest, smallest_5)
 
     EXPECT_EQ(size, 5);
 
-    EXPECT_EQ(tab[base_0(1)].value, -56559);
-    EXPECT_EQ(tab[base_0(1)].obj_ptr->a, -56559);
-    EXPECT_EQ(tab[base_0(1)].obj_ptr->b, -56559);
-    EXPECT_EQ(tab[base_0(1)].obj_ptr->c, -56559);
+    value = -56559;
+    EXPECT_EQ(tab[base_0(1)].value, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->c, value);
 
-    EXPECT_EQ(tab[base_0(2)].value, -2000);
-    EXPECT_EQ(tab[base_0(2)].obj_ptr->a, -2000);
-    EXPECT_EQ(tab[base_0(2)].obj_ptr->b, -2000);
-    EXPECT_EQ(tab[base_0(2)].obj_ptr->c, -2000);
+    value = -2000;
+    EXPECT_EQ(tab[base_0(2)].value, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->c, value);
 
-    EXPECT_EQ(tab[base_0(3)].value, 0);
-    EXPECT_EQ(tab[base_0(3)].obj_ptr->a, 0);
-    EXPECT_EQ(tab[base_0(3)].obj_ptr->b, 0);
-    EXPECT_EQ(tab[base_0(3)].obj_ptr->c, 0);
+    value = 0;
+    EXPECT_EQ(tab[base_0(3)].value, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->c, value);
 
-    EXPECT_EQ(tab[base_0(4)].value, 5);
-    EXPECT_EQ(tab[base_0(4)].obj_ptr->a, 5);
-    EXPECT_EQ(tab[base_0(4)].obj_ptr->b, 5);
-    EXPECT_EQ(tab[base_0(4)].obj_ptr->c, 5);
+    value = 5;
+    EXPECT_EQ(tab[base_0(4)].value, value);
+    EXPECT_EQ(tab[base_0(4)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(4)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(4)].obj_ptr->c, value);
 
-    EXPECT_EQ(tab[base_0(5)].value, 100);
-    EXPECT_EQ(tab[base_0(5)].obj_ptr->a, 100);
-    EXPECT_EQ(tab[base_0(5)].obj_ptr->b, 100);
-    EXPECT_EQ(tab[base_0(5)].obj_ptr->c, 100);
+    value = 100;
+    EXPECT_EQ(tab[base_0(5)].value, value);
+    EXPECT_EQ(tab[base_0(5)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(5)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(5)].obj_ptr->c, value);
+}
+
+TEST(SampleTest, biggest_3)
+{
+    N_smallest_or_biggest_values::N_biggest_values<3, int, OBJ> biggest_values;
+    int value;
+
+    value = 3;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = 5;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = 2;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = 1;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = 4;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = 10;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = 20;
+    biggest_values.push(value, new OBJ(value, value, value));
+
+    int size{};
+    N_smallest_or_biggest_values::entry_t<int, OBJ>* tab = biggest_values.get_data(size);
+
+    EXPECT_EQ(size, 3);
+
+    value = 20;
+    EXPECT_EQ(tab[base_0(1)].value, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->c, value);
+
+    value = 10;
+    EXPECT_EQ(tab[base_0(2)].value, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->c, value);
+
+    value = 5;
+    EXPECT_EQ(tab[base_0(3)].value, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->c, value);
+}
+
+TEST(SampleTest, smallest_5)
+{
+    N_smallest_or_biggest_values::N_biggest_values<5, int, OBJ> biggest_values;
+    int value;
+
+    value = 16468;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = -56559;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = 4541;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = 5;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = 0;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = 100;
+    biggest_values.push(value, new OBJ(value, value, value));
+    value = -2000;
+    biggest_values.push(value, new OBJ(value, value, value));
+
+    int size{};
+    N_smallest_or_biggest_values::entry_t<int, OBJ>* tab = biggest_values.get_data(size);
+
+    EXPECT_EQ(size, 5);
+
+    value = 16468;
+    EXPECT_EQ(tab[base_0(1)].value, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(1)].obj_ptr->c, value);
+
+    value = 4541;
+    EXPECT_EQ(tab[base_0(2)].value, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(2)].obj_ptr->c, value);
+
+    value = 100;
+    EXPECT_EQ(tab[base_0(3)].value, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(3)].obj_ptr->c, value);
+
+    value = 5;
+    EXPECT_EQ(tab[base_0(4)].value, value);
+    EXPECT_EQ(tab[base_0(4)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(4)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(4)].obj_ptr->c, value);
+
+    value = 0;
+    EXPECT_EQ(tab[base_0(5)].value, value);
+    EXPECT_EQ(tab[base_0(5)].obj_ptr->a, value);
+    EXPECT_EQ(tab[base_0(5)].obj_ptr->b, value);
+    EXPECT_EQ(tab[base_0(5)].obj_ptr->c, value);
 }
 
 int main(int argc, char** argv)
