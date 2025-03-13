@@ -126,12 +126,12 @@ namespace N_smallest_or_biggest_values
                 return;
             }
 
-            // pierwsza wartość jest najmniejsza
+            // pierwsza wartość jest największa //
             const value_t smallest_value = tab[index_of_smallest_value].value;
             const value_t biggest_value = tab[0].value;
 
-            // jak jest większa od aktualnie największej to dajemy ją na koniec i nic nie przenosimy
-            if (smallest_value < value)
+            // jak jest mniejsza od aktualnie najmniejszej to dajemy ją na koniec i nic nie przenosimy
+            if (value < smallest_value)
             {
                 if (index_of_smallest_value == (tab_size - 1))
                 {
@@ -146,7 +146,7 @@ namespace N_smallest_or_biggest_values
             // jest gdzieś pomiędzy - trzeba przejść i ustawić na właściwe miejsce
             for (int i = 0; i < tab_size; i++)
             {
-                if (value < tab[i].value)
+                if (value > tab[i].value)
                 {
                     insert(i, value, (obj_t*)obj);
                     return;

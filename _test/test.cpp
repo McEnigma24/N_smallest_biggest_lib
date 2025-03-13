@@ -156,7 +156,7 @@ TEST(SampleTest, biggest_3)
     EXPECT_EQ(tab[base_0(3)].obj_ptr->c, value);
 }
 
-TEST(SampleTest, smallest_5)
+TEST(SampleTest, biggest_5)
 {
     N_smallest_or_biggest_values::N_biggest_values<5, int, OBJ> biggest_values;
     int value;
